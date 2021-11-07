@@ -1,0 +1,25 @@
+import java.*;
+boolean rechercheAux(int[] t, int x, int i){
+    //0<=i<t.length, t trie
+        // ret. vrai ssi x dan t[i..t.length-1)]
+        if(i==t.length)
+            return false;
+        if(t[i]>x)
+            return false;
+        else
+            return ((t[i]==x||rechercheAux(t,x,i+1)));
+        }
+
+boolean rechercheAuxm1(int[] t, int x, int i, int j){
+     //t trie (peut-être vide)
+        //0<=i
+        //j<=t.length-1
+        //ret.vrai ssi x dans t[i..j]
+        int m= (i+j)/2;
+        if(x==t[m])
+            return true;
+        else if (x<t[m])
+            return rechDicho(t,x,i m-1);
+            else
+            return rechDicho(t,x,m+1,j);
+        }
